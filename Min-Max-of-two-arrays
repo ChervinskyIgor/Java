@@ -1,0 +1,81 @@
+//https://www.codeabbey.com/index/task_view/min-of-two
+
+
+import java.util.Scanner;
+import java.util.Locale;
+import java.util.Arrays;
+
+
+
+
+
+public class minimumOfTwo {
+
+    int a = arrayLength ();
+    double A [] = arrayA(1);
+    double B [] = arrayA(2);
+    double C [] = new double[a];
+
+    public int arrayLength() {
+        System.out.println("Input number of items in array");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        return a;
+    }
+
+
+    public double[] arrayA(int q) {
+
+        Scanner scan = new Scanner(System.in);
+        scan.useLocale(Locale.ENGLISH);
+        double A[] = new double[a];
+        System.out.println("Input items of array " + q);
+        for (int i = 0; i < a; i++) {
+            A[i] = scan.nextDouble();
+        }
+        return A;
+    }
+
+
+    public void compareMax() {
+
+        for (int i = 0; i < a; i++) {
+            if (A[i] > B[i]) {
+                System.out.print(" " + A[i]);
+            } else System.out.print(" " + B[i]);
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+    }
+
+    public double [] compareMin() {
+
+            for (int i = 0; i < a; i++) {
+                if (A[i] < B[i]) {
+                    C[i] =A[i];
+                } else C[i] = B[i];
+            }
+            return C;
+        }
+
+
+    public void printArray () {
+ //           for (int i = 0; i < a; i++){
+//                System.out.print(C[i] + " ");
+                System.out.print(Arrays.toString(C));
+ //           }
+        }
+
+
+    public static void main(String args[]) {
+        minimumOfTwo C = new minimumOfTwo();
+        C.compareMin();
+        C.compareMax();
+        C.printArray();
+
+    }
+
+
+}
